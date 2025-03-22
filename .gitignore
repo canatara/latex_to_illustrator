@@ -3,7 +3,4 @@ __pycache__
 DS_Store
 *.svg
 *.png
-*.jpg
-*.jpeg
-*.gif
-*.webp
+*.pdf
