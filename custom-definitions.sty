@@ -1,0 +1,238 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{custom-definitions}[]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define the margin of the document
+\RequirePackage{xkeyval}%
+\RequirePackage{xparse}
+
+\def\margin{}%
+\define@key{custom-definitions.sty}{margin}[]{%
+  \def\margin{#1}%
+}
+
+\ExecuteOptionsX{margin}
+\ProcessOptionsX%
+
+% \ifx\margin\empty
+%     \usepackage{geometry}
+% \else
+%   \usepackage[margin=\margin]{geometry}
+% \fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% \RequirePackage{natbib}
+% \RequirePackage[comma,numbers,sort,compress]{natbib}
+% \renewcommand\bibname{References}
+% \renewcommand{\bibnumfmt}[1]{[#1]}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+% \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{amsmath,amsthm,bm,bbm}
+\usepackage{amssymb, amsfonts}
+\usepackage{nicefrac,microtype}
+% \usepackage{tikz,cancel}
+% \usepackage{subfigure}
+% \usepackage{graphicx}
+\usepackage{wasysym}
+\usepackage{mathtools}
+\usepackage{commath, mathrsfs}
+\usepackage{empheq}
+\usepackage{enumitem}
+\usepackage{physics, braket}
+% \usepackage{dcolumn} % Align table columns on decimal point
+% % \usepackage{float}
+% % \usepackage[ruled,vlined]{algorithm2e}
+% \usepackage{booktabs}       % professional-quality tables
+% \usepackage{xcolor}         % colors
+% \usepackage{hyperref, url}
+% \hypersetup{colorlinks=true, allcolors=blue}
+% \usepackage{diagbox}
+% \usepackage{multirow}
+% \usepackage{array}
+% \usepackage[skins,breakable]{tcolorbox}
+% \usepackage[normalem]{ulem}
+
+% % if you use cleveref..
+% \usepackage[capitalize,noabbrev]{cleveref}
+
+\renewcommand\figref{Fig.~\ref}
+\renewcommand\appref{Appx.~\ref}
+\renewcommand\secref{Sec.~\ref}
+\newcommand\chref{Chapter~\ref}
+% \renewcommand\eqref{Eq.~\ref}
+\renewcommand{\eqref}[1]{Eq.~(\ref{#1})}
+
+\newcommand{\bfit}[1]{{\textbf{\textit{#1}}}}
+\newcommand{\ac}[1]{{\textbf{\textit{#1}}}}
+% Calligraphic letters
+\def\cA{\mathcal{A}}
+\def\cB{\mathcal{B}}
+\def\cC{\mathcal{C}}
+\def\cD{\mathcal{D}}
+\def\cF{\mathcal{F}}
+\def\cG{\mathcal{G}}
+\def\cH{\mathcal{H}}
+\def\cI{\mathcal{I}}
+\def\cK{\mathcal{K}}
+\def\cL{\mathcal{L}}
+\def\cN{\mathcal{N}}
+\def\cO{\mathcal{O}}
+\def\cP{\mathcal{P}}
+\def\cQ{\mathcal{Q}}
+\def\cR{\mathcal{R}}
+\def\cS{\mathcal{S}}
+\def\cT{\mathcal{T}}
+\def\cU{\mathcal{U}}
+\def\cW{\mathcal{W}}
+\def\cX{\mathcal{X}}
+\def\cY{\mathcal{Y}}
+\def\cZ{\mathcal{Z}}
+
+% Bold Letters
+\def\a{{\mathbf a}}
+\def\b{{\mathbf b}}
+\def\c{{\mathbf c}}
+\def\d{{\mathbf d}}
+\def\e{{\mathbf e}}
+\def\f{{\mathbf f}}
+\def\h{{\mathbf h}}
+\def\j{{\mathbf j}}
+\def\k{{\mathbf k}}
+\def\m{{\mathbf m}}
+\def\n{{\mathbf n}}
+\def\p{{\mathbf p}}
+\def\q{{\mathbf q}}
+\def\r{{\mathbf r}}
+\def\t{{\mathbf t}}
+\def\bu{{\mathbf u}}
+\def\bv{{\mathbf v}}
+\def\w{{\mathbf w}}
+\def\x{{\mathbf x}}
+\def\y{{\mathbf y}}
+\def\z{{\mathbf z}}
+
+\def\A{{\mathbf A}}
+\def\B{{\mathbf B}}
+\def\C{{\mathbf C}}
+\def\D{{\mathbf D}}
+\def\E{{\mathbf E}}
+\def\F{{\mathbf F}}
+\def\G{{\mathbf G}}
+\def\H{{\mathbf H}}
+\def\I{{\mathbf I}}
+\def\J{{\mathbf J}}
+\def\K{{\mathbf K}}
+\def\L{{\mathbf L}}
+\def\M{{\mathbf M}}
+\def\N{{\mathbf N}}
+\def\O{{\mathbf O}}
+\def\P{{\mathbf P}}
+\def\Q{{\mathbf Q}}
+\def\R{{\mathbf R}}
+% \def\S{{\mathbf S}}
+\def\T{{\mathbf T}}
+\def\U{{\mathbf U}}
+\def\V{{\mathbf V}}
+\def\W{{\mathbf W}}
+\def\X{{\mathbf X}}
+\def\Y{{\mathbf Y}}
+\def\Z{{\mathbf Z}}
+
+% Bold Greek Letters
+\def\veps{\varepsilon}
+\def\balpha{{\bm \alpha}}
+\def\bdelta{{\bm \delta}}
+\def\bmu{{\bm \mu}}
+\def\bsigma{{\bm \sigma}}
+\def\bpsi{{\bm \psi}}
+\def\bphi{{\bm \phi}}
+\def\bomega{{\bm \omega}}
+\def\bepsilon{{\bm \epsilon}}
+\def\bxi{{\bm \xi}}
+\def\bchi{{\bm \chi}}
+\def\bgamma{{\bm \gamma}}
+
+\def\bPsi{{\bm \Psi}}
+\def\bPhi{{\bm \Phi}}
+\def\bSigma{{\bm \Sigma}}
+\def\bGamma{{\bm \Gamma}}
+\def\bLambda{{\bm \Lambda}}
+
+% Bold numbers
+\def\0{\mathbf{0}}
+\def\1{\mathbf{1}}
+
+% Blackboard Bold (Expectation value, number fields etc)
+\newcommand{\bE}{\mathbb{E}}
+\newcommand{\bF}{\mathbb{F}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bP}{\mathbb{P}}
+\newcommand{\bN}{\mathbb{N}}
+\def\bS{\mathbb{S}}
+
+% Rest of the definitions
+% \theoremstyle{remark}
+% \newtheorem{remark}{Remark}
+% \theoremstyle{plain}
+% \newtheorem{theorem}{Theorem}
+% \newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{corollary}{Corollary}
+% \newtheorem{mydef}{Definition}
+% \newtheorem{prop}{Proposition}
+% \newtheorem{conj}{Conjecture}
+% \def\st{{\rm s.t.}}
+
+\DeclareMathOperator*{\extr}{extr}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\erfc}{erfc}
+
+\newcommand{\dm}[1]{ | #1 \rangle \langle #1|}
+\newcommand{\spec}[1]{\operatorname{spec}\left(#1\right)}
+\newcommand{\proj}{\textrm{proj}}
+\newcommand{\diag}{\textrm{diag}}
+\newcommand{\sinc}{\textrm{sinc}}
+\newcommand{\lrpar}[1]{\left(#1\right)}
+\newcommand{\lrsqpar}[1]{\left[#1\right]}
+
+% quantum operators and maps
+\newcommand{\Vecc}[1]{\operatorname{Vec}\left(#1\right)}
+\newcommand{\Gate}[1]{\textsc{#1}}
+\newcommand{\hgate}{\Gate{h}}
+\newcommand{\zgate}{\Gate{z}}
+\newcommand{\ygate}{\Gate{y}}
+\newcommand{\xgate}{\Gate{x}}
+\newcommand{\czgate}{\Gate{cz}}
+\newcommand{\tgate}{\Gate{t}}
+\newcommand{\pgate}{\Gate{p}}
+\newcommand{\idgate}{\Gate{i}}
+\newcommand{\notgate}{\Gate{not}}
+\newcommand{\cnotgate}{\Gate{cnot}}
+\newcommand{\cxgate}{\Gate{cnot}}
+\newcommand{\swapgate}{\Gate{swap}}
+\newcommand{\meas}{\Gate{M}}
+
+% paragraph formatting
+% \setlength{\parindent}{\z@}
+% \setlength{\parskip  }{5.5\p@}
+
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % THEOREMS
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \theoremstyle{plain}
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{proposition}[theorem]{Proposition}
+% \newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{corollary}[theorem]{Corollary}
+% \theoremstyle{definition}
+% \newtheorem{definition}[theorem]{Definition}
+% \newtheorem{assumption}[theorem]{Assumption}
+% \theoremstyle{remark}
+% \newtheorem{remark}[theorem]{Remark}
