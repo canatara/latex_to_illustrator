@@ -4,6 +4,19 @@ import matplotlib.pyplot as plt
 
 
 def process_latex_equation(latex_list: List[str], env: str = "aligned"):
+    """
+    Process a list of LaTeX equations into a properly formatted string with the specified environment.
+
+    Args:
+        latex_list (List[str]): List of LaTeX equations to process
+        env (str, optional): LaTeX environment to use. Defaults to "aligned".
+
+    Returns:
+        str: Processed LaTeX string with proper environment formatting
+
+    Raises:
+        ValueError: If the specified environment is not supported
+    """
 
     import re
 
@@ -43,6 +56,19 @@ def generate_latex_equation(latex_list,
                             env: str = "aligned",
                             format: str = "svg",
                             save_path: str = "./"):
+    """
+    Generate and save a list of LaTeX equations as an image file.
+
+    This function creates a matplotlib figure with the rendered LaTeX equation and saves it
+    in the specified format. The output is optimized for vector graphics editing in tools
+    like Adobe Illustrator.
+
+    Args:
+        latex_list (Union[str, List[str]]): Single LaTeX equation or list of equations
+        env (str, optional): LaTeX environment to use. Defaults to "aligned".
+        format (str, optional): Output format. Must be one of ["svg", "pdf", "png"]. Defaults to "svg".
+        save_path (str, optional): Directory to save the output file. Defaults to "./".
+    """
 
     assert env in ["aligned", "align", "alignat"], "Environment must be either aligned, align or alignat"
     assert format in ["svg", "pdf", "png"], "Format must be either svg, pdf or png"
@@ -68,6 +94,19 @@ def generate_latex_equation(latex_list,
 def generate_algorithm(latex_alg,
                        format: str = "svg",
                        save_path: str = "./"):
+    """
+    Generate and save a LaTeX algorithm as an image file.
+
+    This function creates a matplotlib figure with the rendered LaTeX algorithm and saves it
+    in the specified format. The algorithm is rendered with a border and is optimized for
+    vector graphics editing in tools like Adobe Illustrator.
+
+    Args:
+        latex_alg (str): LaTeX code for the algorithm
+        format (str, optional): Output format. Must be one of ["svg", "pdf", "png"].
+                              Defaults to "svg".
+        save_path (str, optional): Directory to save the output file. Defaults to "./".
+    """
 
     latex_alg = latex_alg.replace("\n", "")
 
